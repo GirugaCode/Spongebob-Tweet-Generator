@@ -1,21 +1,20 @@
 import random
 import sys
 
-
 def random_arrangement():
-    # Creates a list for the command line inputs starting from the 1 index
+    # A list of the given terminal command line inputs
     inputs_list = sys.argv[1:]
-    # An empty list to append the command lines as strings
+    # An empty list
     result_list = []
-    # shuffles the list
-    random.shuffle(inputs_list)
-
-    for command_line in inputs_list:
-        # Adds the indexs from the input_list to the empty result_list
-        result_list.append(command_line)
-        # Converts the list into strings
+    while len(inputs_list) != 0:
+        # Returns a random index number from the inputs_list
+        rand_index = random.randint(0, len(inputs_list) -1)
+        # Pops the index values from inputs_list and adds it into the empty result_list
+        result_list.append(inputs_list.pop(rand_index))
+        # Changes the list to strings
         str1 = ' '.join(result_list)
     return str1
+    # pass
 
 
 if __name__ == '__main__':
