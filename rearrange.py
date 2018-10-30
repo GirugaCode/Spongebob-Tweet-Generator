@@ -11,9 +11,8 @@ def random_arrangement():
         rand_index = random.randint(0, len(inputs_list) -1)
         # Pops the index values from inputs_list and adds it into the empty result_list
         result_list.append(inputs_list.pop(rand_index))
-        # Changes the list to strings
-        str1 = ' '.join(result_list)
-    return str1
+    # Changes the list to strings
+    return (' '.join(result_list))
     # pass
 
 
