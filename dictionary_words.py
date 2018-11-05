@@ -3,9 +3,8 @@ import random
 
 
 def random_words():
-
     # Created a variable to open the "/usr/share/dict/words" and read it and splits all the new lines.
-    words = open("/usr/share/dict/words", "r").read().split('\n')
+    words = open("/usr/share/dict/words", "r").read().split()
 
     # Created a variable to hold the first terminal command-line input
     command_input = sys.argv[1]
