@@ -1,11 +1,10 @@
 import random
-import re
 
 def histogram_tuple(file):
     text_file = open(file, 'r')
 
     content = text_file.read().lower()
-    words_file = re.split(' ', content)
+    words_file = content.split(' ')
     text_file.close()
 
     list_of_words = []

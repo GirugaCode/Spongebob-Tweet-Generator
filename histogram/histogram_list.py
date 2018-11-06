@@ -1,12 +1,12 @@
 import random
-import re
+
 
 
 def histogram_list(file): # Takes an argument file so I can input the text file name when attempting run it.
     text_file = open(file, 'r') # Opens the text file and reads it
 
-    content = text_file.read().lower() # Will read the text file in a lower case context
-    words = re.split(' ', content) # Splits all the words in the text file containing ' ' so it will only show the words
+    content = text_file.read().lower().replace('\n', '') # Will read the text file in a lower case context
+    words = content.split(' ') # Splits all the words in the text file containing ' ' so it will only show the words
     text_file.close() # Closes the text file for optimization
 
 
