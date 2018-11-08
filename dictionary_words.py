@@ -4,7 +4,7 @@ import random
 
 def random_words():
     # Created a variable to open the "/usr/share/dict/words" and read it and splits all the new lines.
-    words = open("/usr/share/dict/words", "r").read().split()
+    words = open("huckleberry-finn.txt", "r").read().split()
 
     # Created a variable to hold the first terminal command-line input
     command_input = sys.argv[1]
@@ -20,5 +20,5 @@ def random_words():
     return (''.join(randomWords))
 
 
-# Print
-print(random_words())
+if __name__ == "__main__":
+    print(random_words())

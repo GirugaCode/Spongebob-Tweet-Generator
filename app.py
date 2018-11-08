@@ -1,5 +1,5 @@
 from flask import Flask
-from text_file_frequency import open_file, histogram, random_word, main
+from stochastic_sampling import open_file, histogram, random_word, main
 
 app = Flask(__name__)
 

@@ -1,7 +1,7 @@
 import random
 
 
-def histogram_Dict(file):
+def histogram_dict(file):
     text_file = open(file, 'r') # Open text file
 
     content = text_file.read() # Read text file
@@ -19,5 +19,5 @@ def histogram_Dict(file):
     return histogram
 
 if __name__ == '__main__':
-    histogramDictionary = histogram_Dict('sample-histogram.txt')
-    print(histogramDictionary)
+    dictionary = histogram_dict('fish.txt')
+    print(dictionary)
