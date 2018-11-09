@@ -2,7 +2,7 @@ import random
 
 # This function creates a histogram of a text file and returns it as a dictionary
 def open_file():
-    with open('fish.txt', 'r') as myfile:
+    with open('text_files/fish.txt', 'r') as myfile:
         words = myfile.read().replace('\n', '').lower().split()
     return words
 
@@ -58,10 +58,10 @@ def random_test():
 def main():
 
     histogram_dict = histogram()
-    print(histogram_dict)
-    print(random_word())
-    print(random_test())
-
+    # print(histogram_dict)
+    # print(random_word())
+    # print(random_test())
+    
     return(random_word())
 
 if __name__ == "__main__":

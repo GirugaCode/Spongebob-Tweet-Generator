@@ -38,5 +38,5 @@ def histogram_list(file): # Takes an argument file so I can input the text file 
     return histogram
 
 if __name__ == '__main__':
-    histogramlist = histogram_list('sample-histogram.txt')
+    histogramlist = histogram_list('text_files/fish.txt')
     print(histogramlist)
