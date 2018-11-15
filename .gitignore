@@ -2,8 +2,12 @@
 # Created by https://www.gitignore.io/api/macos,python
 
 ### macOS ###
+<<<<<<< HEAD
 # General
 .DS_Store
+=======
+*.DS_Store
+>>>>>>> 8fadefdc994a123fd25b82c849eefd824fc8e23d
 .AppleDouble
 .LSOverride
 
@@ -55,7 +59,10 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+<<<<<<< HEAD
 MANIFEST
+=======
+>>>>>>> 8fadefdc994a123fd25b82c849eefd824fc8e23d
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -70,7 +77,10 @@ pip-delete-this-directory.txt
 # Unit test / coverage reports
 htmlcov/
 .tox/
+<<<<<<< HEAD
 .nox/
+=======
+>>>>>>> 8fadefdc994a123fd25b82c849eefd824fc8e23d
 .coverage
 .coverage.*
 .cache
@@ -78,7 +88,10 @@ nosetests.xml
 coverage.xml
 *.cover
 .hypothesis/
+<<<<<<< HEAD
 .pytest_cache/
+=======
+>>>>>>> 8fadefdc994a123fd25b82c849eefd824fc8e23d
 
 # Translations
 *.mo
@@ -87,7 +100,10 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
+<<<<<<< HEAD
 db.sqlite3
+=======
+>>>>>>> 8fadefdc994a123fd25b82c849eefd824fc8e23d
 
 # Flask stuff:
 instance/
@@ -105,10 +121,13 @@ target/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+<<<<<<< HEAD
 # IPython
 profile_default/
 ipython_config.py
 
+=======
+>>>>>>> 8fadefdc994a123fd25b82c849eefd824fc8e23d
 # pyenv
 .python-version
 
@@ -139,6 +158,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+<<<<<<< HEAD
 .dmypy.json
 dmypy.json
 
@@ -157,5 +177,7 @@ dmypy.json
 pyvenv.cfg
 pip-selfcheck.json
 
+=======
+>>>>>>> 8fadefdc994a123fd25b82c849eefd824fc8e23d
 
 # End of https://www.gitignore.io/api/macos,python
