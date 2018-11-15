@@ -3,12 +3,12 @@
 from __future__ import division, print_function  # Python 2 and 3 compatibility
 
 
-class Listogram(list):
-    """Listogram is a histogram implemented as a subclass of the list type."""
+class Dictogram(dict):
+    """Dictogram is a histogram implemented as a subclass of the dict type."""
 
     def __init__(self, word_list=None):
-        """Initialize this histogram as a new list and count given words."""
-        super(Listogram, self).__init__()  # Initialize this as a new list
+        """Initialize this histogram as a new dict and count given words."""
+        super(Dictogram, self).__init__()  # Initialize this as a new dict
         # Add properties to track useful word counts for this histogram
         self.types = 0  # Count of distinct word types in this histogram
         self.tokens = 0  # Total count of all word tokens in this histogram
@@ -20,56 +20,29 @@ class Listogram(list):
     def add_count(self, word, count=1):
         """Increase frequency count of given word by given count amount."""
         # TODO: Increase word frequency by count
-        # print(word)
-        # print(self)
-        # print(count)
-        # print(self._index(word))
-        target_index = self._index(word)
-        if target_index is not None:
-            self[target_index] = (word, self[target_index][1]+count)
-            self.tokens += count
+        if word in self:
+            self[word] += count
         else:
-            self.append((word, count))
-            self.tokens += count
+            self[word] = count
             self.types += 1
-
+        self.tokens += count
 
 
     def frequency(self, word):
         """Return frequency count of given word, or 0 if word is not found."""
         # TODO: Retrieve word frequency count
-        target_index = self._index(word)
-        if target_index is not None:
-            return self[target_index][1]
+
+        if word in self:
+            return self[word]
         else:
             return 0
 
 
-
-    def __contains__(self, word):
-        """Return boolean indicating if given word is in this histogram."""
-        # TODO: Check if word is in this histogram
-        target_index = self._index(word)
-        if target_index is not None:
-            return True
-        else:
-            return False
-
-    def _index(self, target):
-        """Return the index of entry containing given target word if found in
-        this histogram, or None if target word is not found."""
-        # TODO: Implement linear search to find index of entry with target word
-        for hist_index, hist_word in enumerate(self):
-            if target == hist_word[0]:
-                return hist_index
-        else:
-            return None
-
 def print_histogram(word_list):
     print('word list: {}'.format(word_list))
-    # Create a listogram and display its contents
-    histogram = Listogram(word_list)
-    print('listogram: {}'.format(histogram))
+    # Create a dictogram and display its contents
+    histogram = Dictogram(word_list)
+    print('dictogram: {}'.format(histogram))
     print('{} tokens, {} types'.format(histogram.tokens, histogram.types))
     for word in word_list[-2:]:
         freq = histogram.frequency(word)

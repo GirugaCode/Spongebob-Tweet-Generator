@@ -19,5 +19,5 @@ def histogram_dict(file):
     return histogram
 
 if __name__ == '__main__':
-    dictionary = histogram_dict('text_files/fish.txt')
+    dictionary = histogram_dict('corpus_text/fish.txt')
     print(dictionary)
