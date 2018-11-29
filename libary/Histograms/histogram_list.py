@@ -26,7 +26,6 @@ def histogram_list(file): # Takes an argument file so I can input the text file 
 
     # An empty list to contain the histogram results
     histogram = []
-    # Keeps track of the index
     i = 0
 
     # For word in list_of_words list
