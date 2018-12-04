@@ -54,6 +54,7 @@ class LinkedList(object):
 
     def length(self):
         """Return the length of this linked list by traversing its nodes.
+        Running time: O(n) - loops over all the nodes and increments it
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Loop through all nodes and count one for each
         node_count = 0
@@ -63,6 +64,7 @@ class LinkedList(object):
 
     def append(self, item):
         """Insert the given item at the tail of this linked list.
+        Running time: O(1) - changes tail.next and tail
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Create new node to hold given item
         # TODO: Append node after tail, if it exists
@@ -76,6 +78,7 @@ class LinkedList(object):
 
     def prepend(self, item):
         """Insert the given item at the head of this linked list.
+        O(1) - change .head and new_node.next
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Create new node to hold given item
         # TODO: Prepend node before head, if it exists
@@ -87,6 +90,10 @@ class LinkedList(object):
 
     def find(self, quality):
         """Return an item from this linked list satisfying the given quality.
+        Best case: O(1) If the node.data becomes true it returns it
+
+        Worst case: O(n) Node does not find head while going through the node.data and returns None
+
         TODO: Best case running time: O(???) Why and under what conditions?
         TODO: Worst case running time: O(???) Why and under what conditions?"""
         # TODO: Loop through all nodes to find item where quality(item) is True
@@ -102,6 +109,13 @@ class LinkedList(object):
 
     def delete(self, item):
         """Delete the given item from this linked list, or raise ValueError.
+
+        Best case: O(1) if the current node does not equal the item then change
+        the previous node to current node and current to the next node
+
+        Worst case: O(n) if the current node equals the item then and the head
+        is equal to the current node then the head is the next current node
+
         TODO: Best case running time: O(???) Why and under what conditions?
         TODO: Worst case running time: O(???) Why and under what conditions?"""
         # TODO: Loop through all nodes to find one whose data matches given item
@@ -111,21 +125,21 @@ class LinkedList(object):
         prev_node = None
         curr_node = self.head
 
-        while curr_node is not None: # ll isn't empty & curr_node not out of range
-            if curr_node.data == item: # curr_node is same as item
+        while curr_node is not None:
+            if curr_node.data == item:
                 if self.head == curr_node:
-                    self.head = curr_node.next # re-assign head
-                else: # 2nd node (or later) is a match
+                    self.head = curr_node.next
+                else:
                     prev_node.next = curr_node.next
                 if self.tail == curr_node:
-                    self.tail = prev_node # re-assign tail
-                curr_node = None # delete data inside curr_node in all situations
+                    self.tail = prev_node
+                curr_node = None
                 return
-            else: # curr_node is NOT same as item
-                prev_node = curr_node # keep track of previous node before moving on
-                curr_node = curr_node.next # to iterate through the list
+            else:
+                prev_node = curr_node
+                curr_node = curr_node.next
 
-        raise ValueError('Item not found: {}'.format(item)) # never found item
+        raise ValueError('Item not found: {}'.format(item))
 
 
 def test_linked_list():
