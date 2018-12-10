@@ -1,8 +1,9 @@
 import random
+from  libary.Histograms.histogram_dictionary import histogram_dict
 
 # This function creates a histogram of a text file and returns it as a dictionary
 def open_file():
-    with open('corpus_text/fish.txt', 'r') as myfile:
+    with open('libary/corpus_text/fish.txt', 'r') as myfile:
         words = myfile.read().replace('\n', '').lower().split()
     return words
 
@@ -20,20 +21,18 @@ def histogram():
     # Returns the dictionary
     return histogram_dictionary
 
-def random_word():
-    # Inputs the histogram
-    histogram_dictionary = histogram()
+def random_word(histogram_dict):
 
     # Keeps track of the count with an accumulator
     word_count = 0
 
     # Grabs the sum of the dictionary values
-    total_values = sum(histogram_dictionary.values())
+    total_values = sum(histogram_dict.values())
     # Gets a random number from the sum of values
     rand_index = random.randint(0, total_values - 1)
     # For loop that goes through the (key, value) of the histogram_dictionary
 
-    for key, value in histogram_dictionary.items():
+    for key, value in histogram_dict.items():
         # Increment the word_count with the value of histogram_dictionary
 
         word_count += value
@@ -43,10 +42,9 @@ def random_word():
         else:
             continue
 
-def random_test():
+def random_test(histogram_dict):
     dict = {}
-    # Inputs the histogram
-    histogram_dictionary = histogram()
+
     for _ in range(0,100):
         word_selected = random_word()
         if word_selected in dict:
@@ -59,10 +57,10 @@ def main():
 
     histogram_dict = histogram()
     # print(histogram_dict)
-    # print(random_word())
-    print(random_test())
+    print(random_word(histogram_dict))
+    # print(random_test())
 
-    return(random_word())
+    # return(random_word())
 
 if __name__ == "__main__":
     main()

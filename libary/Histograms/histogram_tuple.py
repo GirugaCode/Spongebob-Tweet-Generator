@@ -28,5 +28,5 @@ def histogram_tuple(file):
 
 
 if __name__ == '__main__':
-    histogramtuple = histogram_tuple('corpus_text/fish.txt')
+    histogramtuple = histogram_tuple('libary/corpus_text/fish.txt')
     print(histogramtuple)
