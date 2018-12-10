@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,render_template
 from flask import request
 import nth_order_markov
 import sys
@@ -12,4 +12,5 @@ app.nth_order_markov = nth_order_markov.main()
 
 def sentence_creator():
     my_sentence = app.nth_order_markov.generate_sentence()
-    return my_sentence
+
+    return render_template("main.html", sentence = my_sentence)

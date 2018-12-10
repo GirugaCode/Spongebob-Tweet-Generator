@@ -1,0 +1,31 @@
+
+@font-face {
+    font-family: spongebob;
+    src: url(krabbypatty.ttf);
+}
+
+body
+{
+  background-color: black;
+}
+
+p
+{
+  color: #A7A7A7;
+  font-family: spongebob;
+  font-size: 30px;
+  /* insert font above if neeeded, google it  */
+}
+
+.content
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sup
+{
+  align-items: center;
+  text-align: center;
+}
