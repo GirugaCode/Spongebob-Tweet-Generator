@@ -48,7 +48,7 @@ class Nth_Order_Markov(dict):
 
 
 
-    def generate_sentence(self, sentencelength=16):
+    def generate_sentence(self, sentencelength=20):
         # Keeps the indexs in bounds
         sentencelength = sentencelength - self.order
 
