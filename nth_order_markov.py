@@ -5,6 +5,7 @@ from libary.stochastic_sampling import random_word
 import random
 
 class Nth_Order_Markov(dict):
+    """Nth_Order_Markov is a Dictionary of Tuples and Dictograms"""
     def __init__(self, word_list=None, order=6):
         super(Nth_Order_Markov, self).__init__() # initalize empty dictionary to self
         self.empty = True
@@ -16,6 +17,7 @@ class Nth_Order_Markov(dict):
 
 
     def create_markov(self, word_list):
+        """Sets the Key and Value rules for the N_th Order Markov"""
         length_of_list = len(word_list)
 
         for i in range(0, length_of_list - self.order):
@@ -30,6 +32,7 @@ class Nth_Order_Markov(dict):
 
 
     def add_token(self, current_type, next_type):
+        """ Populates the Markov chain with the Keys and Value under conditions"""
         # checking if init dictionary is Empty
         if self.empty:
             self.empty = False
@@ -49,6 +52,7 @@ class Nth_Order_Markov(dict):
 
 
     def generate_sentence(self, sentencelength=20):
+        """ Generates a random sentance using the Nth order markov chain """
         # Keeps the indexs in bounds
         sentencelength = sentencelength - self.order
 
