@@ -29,8 +29,7 @@ class HashTable(object):
     def keys(self):
         """Return a list of all keys in this hash table.
         O(n) loops through the keys and values of the bucket and then
-        returns the key into an empty list
-        TODO: Running time: O(???) Why and under what conditions?"""
+        returns the key into an empty list"""
         # Collect all keys in each bucket
         all_keys = []
         for bucket in self.buckets:
@@ -41,8 +40,7 @@ class HashTable(object):
     def values(self):
         """Return a list of all values in this hash table.
         O(n) loops through the keys and values of the bucket and then
-        returns the value into an empty list
-        TODO: Running time: O(???) Why and under what conditions?"""
+        returns the value into an empty list"""
         # TODO: Loop through all buckets
         # TODO: Collect all values in each bucket
         values = []
@@ -53,8 +51,7 @@ class HashTable(object):
 
     def items(self):
         """Return a list of all items (key-value pairs) in this hash table.
-        O(n) Looping through self.buckets, creates and extends the bucket items
-        TODO: Running time: O(???) Why and under what conditions?"""
+        O(n) Looping through self.buckets, creates and extends the bucket items"""
         # Collect all pairs of key-value entries in each bucket
         all_items = []
         for bucket in self.buckets:
@@ -63,8 +60,7 @@ class HashTable(object):
 
     def length(self):
         """Return the number of key-value entries by traversing its buckets.
-        O(1) returns self.size
-        TODO: Running time: O(???) Why and under what conditions?"""
+        O(1) returns self.size"""
         # TODO: Loop through all buckets
         # TODO: Count number of key-value entries in each bucket
         return self.size
@@ -73,8 +69,7 @@ class HashTable(object):
     def contains(self, key):
         """Return True if this hash table contains the given key, or False.
         O(n) checks if key-value is already inside the bucket.
-        Returns true if so and false if not.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        Returns true if so and false if not."""
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
         index = self._bucket_index(key)
@@ -88,8 +83,7 @@ class HashTable(object):
     def get(self, key):
         """Return the value associated with the given key, or raise KeyError.
         O(n) checks if there is a key-value entry. If so, return the entry.
-        If not, raise KeyError
-        TODO: Running time: O(???) Why and under what conditions?"""
+        If not, raise KeyError"""
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
         # TODO: If found, return value associated with given key
@@ -108,8 +102,7 @@ class HashTable(object):
     def set(self, key, value):
         """Insert or update the given key with its associated value.
         O(1) adds new node to the bucket if the bucket is empty or if one
-        already exsist, then delete the entry and add a new node
-        TODO: Running time: O(???) Why and under what conditions?"""
+        already exsist, then delete the entry and add a new node"""
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
         # TODO: If found, update value associated with given key
@@ -132,8 +125,7 @@ class HashTable(object):
     def delete(self, key):
         """Delete the given key from this hash table, or raise KeyError.
         O(1) locates the entry and deletes the bucket.
-        Also, decreases the size by 1
-        TODO: Running time: O(???) Why and under what conditions?"""
+        Also, decreases the size by 1"""
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
         # TODO: If found, delete entry associated with given key

@@ -1,16 +1,3 @@
-# import re
-#
-# pattern = r'\[.*?\]'
-#
-# withbracket = open('withbracket.txt', 'r')
-# withoutbracket = open('withoutbracket.txt', 'w')
-#
-# newshit = re.sub(pattern, '', withbracket)
-# withoutbracket.write(newshit)
-#
-# withbracket.close()
-# withoutbracket.close()
-
 import re
 pattern = r'\[[^\]]*\] '
 pattern2 = r'\[[^\]]*\]'
