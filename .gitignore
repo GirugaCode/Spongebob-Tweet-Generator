@@ -181,3 +181,4 @@ pip-selfcheck.json
 >>>>>>> 8fadefdc994a123fd25b82c849eefd824fc8e23d
 
 # End of https://www.gitignore.io/api/macos,python
+.env
