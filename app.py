@@ -2,7 +2,7 @@ from flask import Flask,render_template, request, redirect
 from flask import request
 import nth_order_markov
 import sys
-import twitter
+from twitter import tweet
 
 
 app = Flask(__name__)
@@ -12,7 +12,6 @@ app.nth_order_markov = nth_order_markov.main()
 @app.route('/')
 
 @app.route('/tweet', methods=['POST'])
-
 def tweet():
     status = request.form['quote']
     twitter.tweet(status)
