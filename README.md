@@ -11,3 +11,4 @@ Visit the website here: (https://spongebob-tweet-generator.herokuapp.com)
 - Python 3
 - Flask
 - Heroku
+- Twitter API
