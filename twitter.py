@@ -2,12 +2,12 @@ import os
 import dotenv
 from requests_oauthlib import OAuth1Session
 
-dotenv.load_dotenv('.env')
-
 consumer_key = os.environ.get('TWITTER_CONSUMER_KEY')
 consumer_secret = os.environ.get('TWITTER_CONSUMER_SECRET')
 access_token = os.environ.get('TWITTER_ACCESS_TOKEN')
 access_token_secret = os.environ.get('TWITTER_ACCESS_TOKEN_SECRET')
+
+dotenv.load_dotenv('.env')
 
 session = OAuth1Session(consumer_key,
                         client_secret=consumer_secret,
@@ -17,6 +17,9 @@ session = OAuth1Session(consumer_key,
 
 # The URL endpoint to update a status (i.e. tweet)
 url = 'https://api.twitter.com/1.1/statuses/update.json'
+
+# Send a POST request to the url with a 'status' parameter
+resp = session.post(url, { 'status': status })
 
 def tweet(status):
     resp = session.post(url, { 'status': status })
