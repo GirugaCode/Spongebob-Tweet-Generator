@@ -18,9 +18,6 @@ session = OAuth1Session(consumer_key,
 # The URL endpoint to update a status (i.e. tweet)
 url = 'https://api.twitter.com/1.1/statuses/update.json'
 
-# Send a POST request to the url with a 'status' parameter
-resp = session.post(url, { 'status': status })
-
 def tweet(status):
     resp = session.post(url, { 'status': status })
     return resp.text
