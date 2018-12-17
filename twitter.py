@@ -1,7 +1,6 @@
 import os
 import dotenv
 from requests_oauthlib import OAuth1Session
-from os import environ
 
 dotenv.load_dotenv('.env')
 
