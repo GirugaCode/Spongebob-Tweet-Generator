@@ -2,13 +2,6 @@ import os
 import dotenv
 from requests_oauthlib import OAuth1Session
 
-# use this for production; set vars in heroku dashboard
-from os import environ
-CONSUMER_KEY = environ['TWITTER_CONSUMER_KEY']
-CONSUMER_SECRET = environ['TWITTER_CONSUMER_SECRET']
-ACCESS_KEY = environ['TWITTER_ACCESS_TOKEN']
-ACCESS_SECRET = environ['TWITTER_ACCESS_TOKEN_SECRET']
-
 dotenv.load_dotenv('.env')
 
 consumer_key = os.environ.get('TWITTER_CONSUMER_KEY')
